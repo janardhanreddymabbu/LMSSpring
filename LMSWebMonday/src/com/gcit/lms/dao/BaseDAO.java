@@ -18,6 +18,8 @@ public abstract class BaseDAO {
 	
 	public Connection connection;
 	
+	
+	
 	public BaseDAO(Connection conn){
 		this.connection = conn;
 	}
