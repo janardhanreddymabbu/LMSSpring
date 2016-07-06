@@ -58,10 +58,7 @@ public class AdminServlet extends HttpServlet {
 		case "/EditAuthor":
 			forwardPath = prepareEditAuthor(request);
 			break;
-//		case "/pageAuthors":
-//			pageAuthors(request);
-//			forwardPath = "viewauthors.jsp";
-//			break;
+
 			
 		case "/pageAuthors":
 		pageAuthors(request, response);
@@ -554,7 +551,7 @@ public class AdminServlet extends HttpServlet {
 		String bookId = request.getParameter("selectedBookName");
 		String branchId = request.getParameter("branchId");
 		String noOfCopies = request.getParameter("noOfCopies");
-		System.out.println(bookId+ " " + branchId+ " " +noOfCopies);
+		
 		
 		BookCopies bookcopies = new BookCopies();
 		bookcopies.setBookId(Integer.parseInt(bookId));
@@ -855,7 +852,7 @@ private String deletePublisher(HttpServletRequest request) {
 	
 	private String editPublisher(HttpServletRequest request) {
 		String publisherName = request.getParameter("publisherName");
-		String publisherAddress = request.getParameter("publisherName");
+		String publisherAddress = request.getParameter("publisherAddress");
 		String publisherPhone = request.getParameter("publisherPhone");
 		String publisherId = request.getParameter("publisherId");
 		Publisher publisher = new Publisher();
@@ -1298,7 +1295,7 @@ private String deletePublisher(HttpServletRequest request) {
 	private String prepareDeleteAuthor(HttpServletRequest request) {
 		String authorId = request.getParameter("authorId");
 		Author author = new Author();
-		System.out.println("in edit author");
+		
 		if(authorId!=null && !("").equals(authorId)){
 			
 			Integer authorID = Integer.parseInt(authorId);
